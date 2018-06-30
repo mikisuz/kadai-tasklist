@@ -27,7 +27,7 @@ class TasksController extends Controller
             $data += $this->counts($user);
             return view('tasks.index', $data);
         }else {
-            return redirect('/');
+            return view('welcome');
         }
     }
 
