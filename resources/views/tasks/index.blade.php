@@ -20,11 +20,12 @@
                         <td>{{ $task->status }}</td>
                         <td>{{ $task->content }} </td>
                     </tr>
-            @endforeach
+                @endforeach
+                {!! $tasks->render() !!}
            </tbody>
         </table>
     @endif
     
-    {!! link_to_route('tasks.create', '作成ページ',null, ['class' => 'btn btn-primary']) !!}
+    {!! link_to_route('tasks.create', '作成ページ', null, ['class' => 'btn btn-primary']) !!}
 
 @endsection

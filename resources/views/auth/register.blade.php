@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-md=6 col-md-offset-3">
             
-            {Form::open(['route' => 'signup.post']) !!}
+            {!! Form::open(['route' => 'signup.post']) !!}
                 <div class="form-group">
                     {!! Form::label('name','Name') !!}
                     {!! Form::text('name', old('name'), ['class' => 'form-control']) !!}
@@ -26,7 +26,7 @@
                
                 <div class="form-group">
                     {!! Form::label('password_confirmation','Confirmation') !!}
-                    {!! Form::password('password_conrirmation', ['class' => 'form-control']) !!}
+                    {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
                 </div>
 
                  {!! Form::submit('sign up', ['class' => 'btn btn-primary btn-block']) !!}

@@ -16,11 +16,12 @@
             <td>{{ $task->content }}</td>
         </tr>
     </table>
-    
-    {!! link_to_route('tasks.edit','編集',['id' => $task->id],['class' => 'btn btn-default']) !!}
-    
-    {!! Form::model($task, ['route' => ['tasks.destroy', $task->id], 'method' => 'delete']) !!}
-        {!! Form::submit('削除',['class' => 'btn btn-denger']) !!}
-    {!! Form::close() !!}
+    <div>
+        @if (Auth::id() == $task->user_id)
+            {!! link_to_route('tasks.edit','編集',['id' => $task->id],['class' => 'btn btn-default']) !!}
+                {!! Form::model($task, ['route' => ['tasks.destroy', $task->id], 'method' => 'delete']) !!}
+                {!! Form::submit('削除',['class' => 'btn btn-denger']) !!}
+            {!! Form::close() !!}
+        @endif
     
 @endsection
